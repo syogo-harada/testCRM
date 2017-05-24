@@ -33,7 +33,23 @@ class AgenciesController extends AppController{
             }
         }
         }
-        //$this->render('create');
+    
+
+    public function edit($id = null) {
+        $this->Agency->id=$id; 
+        if (!$this->Agency->exists()) {
+            throw new NotFoundException(__('Invalid agency'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Agency->save($this->request->data)) {
+                $this->Flash->success(__('This agency has been updated.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            $this->Flash->error(__('Unable to update agency.'));
+        }else{
+            $this->request->data = $this->Agency->findById($id);
+        }
+    }
     
 
     

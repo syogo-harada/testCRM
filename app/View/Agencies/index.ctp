@@ -18,7 +18,10 @@
             <td><?php echo h($row['Agency']['agency_name']); ?></td>
             <td><?php echo h($row['Agency']['created']); ?></td>
             <td><?php echo h($row['Agency']['modified']); ?></td>
-            <td><?php echo $this->Html->link('削除', '/Agencies/done/' . $row['Agency']['id']); ?></td>
+            <td><?php echo $this->Html->link('削除', '/Agencies/done/' . $row['Agency']['id']); 
+                      echo ' ';
+                      echo $this->Html->link('編集', array('action' => 'edit', $row['Agency']['id']));?>                
+            </td>
         </tr>
 
     <?php endforeach; ?>
