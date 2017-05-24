@@ -1,0 +1,40 @@
+
+.clearfix:after{
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+
+.left_article{
+    /*width:200px;*/
+    width:20%;
+    height: 600px;
+   
+    float: left;
+}
+
+.center_article{
+    /*width: 500px;*/
+    width: 60%;
+    height: 600px;
+   
+    float: left;
+}
+
+.center_table {
+    width: 100%;
+    table-layout: fixed;
+
+}
+
+.password {
+    overflow: scroll;
+}
+
+.right_article{
+    /*width:200px;*/
+    width: 20%;
+    height: 600px;
+    float: right;
+}
